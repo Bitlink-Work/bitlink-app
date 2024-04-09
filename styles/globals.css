@@ -1,0 +1,366 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* --foreground: #fff;
+  --background: #030016; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* color: (var(--foreground));
+  background: (var(--background)); */
+  font-family: "Poppins", sans-serif;
+  background-color: #fdfcfb;
+}
+
+/* font poppin */
+@font-face {
+  font-family: "Poppins";
+  font-weight: 800;
+  src: url("../fonts/poppins/Poppins-ExtraBold.woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 700;
+  src: url("../fonts/poppins/Poppins-Bold.woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: url("../fonts/poppins/Poppins-SemiBold.woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  src: url("../fonts/poppins/Poppins-Medium.woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  src: url("../fonts/poppins/Poppins-Regular.woff2");
+}
+
+/* font clockmaker */
+@font-face {
+  font-family: "Clockmaker";
+  font-weight: 800;
+  src: url("../fonts/clockmarker/Clockmaker-ExtraBold.woff2");
+}
+@font-face {
+  font-family: "Clockmaker";
+  font-weight: 700;
+  src: url("../fonts/clockmarker/Clockmaker-Bold.woff2");
+}
+@font-face {
+  font-family: "Clockmaker";
+  font-weight: 600;
+  src: url("../fonts/clockmarker/Clockmaker-SemiBold.woff2");
+}
+@font-face {
+  font-family: "Clockmaker";
+  font-weight: 500;
+  src: url("../fonts/clockmarker/Clockmaker-Medium.woff2");
+}
+@font-face {
+  font-family: "Clockmaker";
+  font-weight: 400;
+  src: url("../fonts/clockmarker/Clockmaker-Regular.woff2");
+}
+
+.dashboard::-webkit-scrollbar {
+  width: 0px;
+}
+.tabs::-webkit-scrollbar {
+  /* width: 3px; */
+  height: 4px;
+  border-radius: 30px;
+  display: none;
+}
+
+/* Track */
+.tabs::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 30px;
+}
+
+/* Handle */
+.tabs::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 30px;
+}
+
+/* Handle on hover */
+.tabs::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  border-radius: 30px;
+}
+
+table {
+  background: #fff;
+  box-shadow:
+    0px 1px 3px 0px rgba(25, 33, 61, 0.05),
+    0px 2px 8px 0px rgba(25, 33, 61, 0.04);
+  border-radius: 12px 12px 0px 0px;
+  border: 0.6px solid #ebeff6;
+  /* overflow: hidden; */
+  width: 100%;
+  border: none;
+}
+
+table thead tr {
+  @apply bg-primary;
+}
+
+table thead tr th {
+  text-align: start;
+  font-family: Poppins;
+  font-size: 14px;
+  /* font-style: normal; */
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+  color: #202124;
+  padding: 12px 0;
+  height: 45px;
+}
+table thead tr th:first-child {
+  padding-left: 24px;
+}
+
+table thead tr th:last-child {
+  padding-right: 24px;
+}
+
+table tbody tr {
+  border: 0.6px solid #ebeff6;
+  cursor: pointer;
+}
+
+table tbody tr:hover {
+  background: rgba(233, 233, 233, 0.5);
+}
+
+table tbody tr td {
+  text-align: start;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  color: #202124;
+  padding: 3px 0;
+  height: 36px;
+}
+
+table tbody tr td:first-child {
+  padding-left: 24px;
+}
+table tbody tr td:last-child {
+  padding-right: 24px;
+}
+
+.custom_table table thead tr th {
+  padding: 16px 0;
+}
+.custom_table table thead tr th:first-child {
+  padding-left: 24px;
+}
+.custom_table table tbody tr td {
+  padding: 12px 8px 12px 0px;
+}
+.custom_table table tbody tr td:first-child {
+  padding-left: 24px;
+}
+
+.bill table {
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+.bill table thead tr {
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.invoice_info .bill table tbody tr,
+.invoice_info .bill table thead tr {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.history.bill table thead tr {
+  grid-template-columns: 4fr 2fr 2fr 2fr 2fr;
+}
+
+.bill table thead tr th {
+  text-align: center;
+  border-bottom: 2.25px solid #bababb;
+}
+.history.bill table thead tr th {
+  text-align: start;
+  border-bottom: 1.5px solid #e9e9e9;
+}
+
+.bill table thead tr th:first-child {
+  padding-left: 0px;
+}
+
+.bill table thead tr th:last-child {
+  padding-right: 0px;
+}
+
+.bill table tbody tr {
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  cursor: pointer;
+  border: none;
+}
+
+.history.bill table tbody tr {
+  grid-template-columns: 4fr 2fr 2fr 2fr 2fr;
+}
+
+.bill table tbody tr td {
+  text-align: center;
+  border-bottom: 1.5px solid #e9e9e9;
+}
+
+.history.bill table tbody tr td {
+  text-align: start;
+  border-bottom: 0.6px solid #ebeff6;
+  height: 62px;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+}
+
+.bill table tbody tr td:first-child {
+  padding-left: 0px;
+}
+.bill table tbody tr td:last-child {
+  padding-right: 0px;
+}
+
+.document table thead tr {
+  display: grid;
+  grid-template-columns: 6fr 5fr 3fr 3fr 1fr;
+}
+.document table thead tr th {
+  height: 53px;
+  display: flex;
+  align-items: start;
+  display: flex;
+}
+.document table tbody tr {
+  display: grid;
+  grid-template-columns: 6fr 5fr 3fr 3fr 1fr;
+}
+.document table tbody tr td {
+  height: 69px;
+  display: flex;
+  align-items: center;
+}
+#qr-code svg {
+  position: relative;
+}
+#qr-code svg image {
+  x: 50%;
+  y: 50%;
+  transform: translate(-4.5%, -4.5%);
+  width: 14px !important;
+  height: 16px !important;
+}
+
+/* Remove spinner buttons */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px white inset !important; /* Adjust as needed */
+}
+
+/* Firefox specific */
+input:-moz-placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+.animation-face-in {
+  animation: FaceIn ease-in 0.6s;
+}
+
+.animation-move-top {
+  animation: MoveTop ease-in 0.6s;
+}
+.animation-move-left {
+  animation: MoveLeft ease-in 0.6s;
+}
+
+@keyframes FaceIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes MoveTop {
+  from {
+    opacity: 0;
+    transform: translate(-32px, 100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-32px, 0%);
+  }
+}
+
+@keyframes MoveLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.swiper {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.swiper-slide {
+  width: fit-content !important;
+}
+
+.customDatePicker {
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-image: url("/images/invoices/calendar.svg");
+  /* Additional styling to adjust the size, position, etc. */
+  /* Example styles: */
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  /* You might need to adjust the background-size, background-position, etc., based on the dimensions of your custom icon */
+}
+
+input[type="date"].customDatePicker::-webkit-datetime-edit {
+  display: none;
+}
